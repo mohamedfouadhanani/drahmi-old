@@ -16,6 +16,8 @@
         <input type="submit" value="login" />
     </form>
 
+    <span>forgot your password? <a href="{{route("password.request")}}">reset password</a></span>
+
     <span>don't have an account? <a href="{{route("register")}}">register</a></span>
     
 @endsection
