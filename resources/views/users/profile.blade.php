@@ -16,8 +16,5 @@
         </x-input-field>
 
         <input type="submit" value="update" />
-    </form>
-
-    <span>already have an account? <a href="{{route("login")}}">login</a></span>
-    
+    </form>    
 @endsection
