@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\TargetController;
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\User\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,6 +24,8 @@ Route::get('/', function () {
 Route::resource("accounts", AccountController::class)->middleware(["auth", "verified"]);
 
 Route::resource("targets", TargetController::class)->middleware(["auth", "verified"]);
+
+Route::resource("categories", CategoryController::class)->middleware(["auth", "verified"]);
 
 Route::prefix("users")->middleware(["auth", "verified"])->name("users.")->group(function () {
     Route::get("profile", ProfileController::class, "edit")->name("profile");
