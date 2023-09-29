@@ -16,4 +16,8 @@ class Account extends Model
     public function currency() {
         return $this->belongsTo(Currency::class);
     }
+
+    public function targets() {
+        return $this->hasMany(Target::class);
+    }
 }
