@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', $expense->name)
+@section('title', "expense")
 
 @section('content')
 <section>
