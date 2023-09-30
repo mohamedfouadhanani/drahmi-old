@@ -7,7 +7,6 @@ use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\IncomeController;
 use App\Http\Controllers\TransferController;
 use App\Http\Controllers\ProfileController;
-use App\Models\Account;
 use Illuminate\Support\Facades\Route;
 
 /*
