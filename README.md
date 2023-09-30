@@ -46,7 +46,7 @@ Drahmi's transaction management functionality offers users a comprehensive tools
 
 -   [ ] Implement the `Account.balance` method.
 -   [ ] Implement the `Target.is_reached` method.
--   [ ] Extract the **UserController** from the **User** folder.
--   [ ] Remove the `welcome.blade.php` template.
--   [ ] Implement the `HOME` route.
+-   [x] Extract the **UserController** from the **User** folder.
+-   [x] Remove the `welcome.blade.php` template.
+-   [x] Implement the `HOME` route.
 -   [ ] Implement the user interface.
