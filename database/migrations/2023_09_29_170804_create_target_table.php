@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('targets', function (Blueprint $table) {
             $table->id();
             $table->string("name")->unique();
-            $table->string("description")->nullable();
+            $table->longText("description")->nullable();
             $table->unsignedBigInteger('account_id');
             $table->string("condition");
             $table->float("amount", 11, 2);
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('target');
+        Schema::dropIfExists('targets');
     }
 };
