@@ -28,4 +28,12 @@ class Account extends Model
     public function expenses() {
         return $this->hasMany(Expense::class);
     }
+
+    public function from_transfers() {
+        return $this->hasMany(Transfer::class, "from_account_id");
+    }
+
+    public function to_transfers() {
+        return $this->hasMany(Transfer::class, "to_account_id");
+    }
 }
