@@ -9,12 +9,12 @@
 
         {{-- date --}}
         <x-input-field name="date" label="date">
-            <input type="date" id="date" placeholder="Enter the incomes date" value="{{ old("date", \Carbon\Carbon::parse($income->transaction->date)->format('Y-m-d')) }}" name="date">
+            <input type="date" id="date" placeholder="Enter the incomes date" value="{{ old("date", $income->transaction == null ? "" : \Carbon\Carbon::parse($income->transaction->date)->format('Y-m-d')) }}" name="date">
         </x-input-field>
 
         {{-- description --}}
         <x-input-field name="description" label="description">
-            <textarea name="description" id="description" placeholder="Enter the incomes description">{{ old("description", $income->transaction->description) }}</textarea>
+            <textarea name="description" id="description" placeholder="Enter the incomes description">{{ old("description", $income->transaction == null ? "" : $income->transaction->description) }}</textarea>
         </x-input-field>
 
         {{-- amount --}}

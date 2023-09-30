@@ -15,7 +15,6 @@ class CategorySeeder extends Seeder
     {
         DB::table("categories")->delete();
         DB::table("categories")->insert([
-            ["name" => "Income", "description" => "Money earned from various sources, such as salary, freelance work, or investments."],
             ["name" => "Housing", "description" => "Expenses related to your place of residence, including rent or mortgage payments, utilities, and maintenance."],
             ["name" => "Transportation", "description" => "Costs associated with getting around, like fuel, public transportation, and vehicle maintenance."],
             ["name" => "Food", "description" => "Expenditures on groceries, dining out, and food-related expenses."],

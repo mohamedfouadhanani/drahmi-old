@@ -6,7 +6,6 @@ use App\Enums\TargetConditionEnum;
 use App\Http\Requests\TargetFormRequest;
 use App\Models\Account;
 use App\Models\Target;
-use Illuminate\Http\Request;
 
 class TargetController extends Controller
 {
