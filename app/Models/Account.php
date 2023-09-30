@@ -20,4 +20,8 @@ class Account extends Model
     public function targets() {
         return $this->hasMany(Target::class);
     }
+
+    public function incomes() {
+        return $this->hasMany(Income::class);
+    }
 }
