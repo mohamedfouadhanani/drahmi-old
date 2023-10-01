@@ -9,6 +9,7 @@
             <li><a href="{{ route("categories.index") }}">categories</a></li>
             <li><a href="{{ route("incomes.index") }}">incomes</a></li>
             <li><a href="{{ route("expenses.index") }}">expenses</a></li>
+            <li><a href="{{ route("transfers.index") }}">transfers</a></li>
             <li><a href="{{ route("targets.index") }}">targets</a></li>
             <li><a href="{{ route("users.profile") }}">profile</a></li>
             <li>

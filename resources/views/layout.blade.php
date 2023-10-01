@@ -7,7 +7,7 @@
     <title>drahmi | @yield('title')</title>
 </head>
 <body>
-    @include('partials.navbar')
+    @include('partials.header')
     @yield('content')
 </body>
 </html>
