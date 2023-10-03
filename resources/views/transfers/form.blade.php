@@ -33,7 +33,7 @@
         <x-input.section name="from_account_id" label="from account">
             <x-select-field name="from_account_id">
                 @foreach ($accounts as $account)
-                    <option {{ $transfer->from_account_id === $account->id ? "selected" : "" }} value="{{ $account->id }}">{{ $account->name }}</option>
+                    <option {{ $transfer->from_account_id === $account->id ? "selected" : "" }} value="{{ $account->id }}">{{ $account->name }} - {{ $account->balance }} {{ $account->currency->code }}</option>
                 @endforeach
             </x-select-field>
         </x-input.section>
@@ -47,7 +47,7 @@
         <x-input.section name="to_account_id" label="to account">
             <x-select-field name="to_account_id">
                 @foreach ($accounts as $account)
-                    <option {{ $transfer->to_account_id === $account->id ? "selected" : "" }} value="{{ $account->id }}">{{ $account->name }}</option>
+                    <option {{ $transfer->to_account_id === $account->id ? "selected" : "" }} value="{{ $account->id }}">{{ $account->name }} - {{ $account->balance }} {{ $account->currency->code }}</option>
                 @endforeach
             </x-select-field>
         </x-input.section>

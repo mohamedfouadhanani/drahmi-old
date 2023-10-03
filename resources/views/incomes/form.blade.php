@@ -37,7 +37,7 @@
         <x-input.section name="account_id" label="account">
             <x-select-field name="account_id">
                 @foreach ($accounts as $account)
-                    <option {{ $income->account_id === $account->id ? "selected" : "" }} value="{{ $account->id }}">{{ $account->name }}</option>
+                    <option {{ $income->account_id === $account->id ? "selected" : "" }} value="{{ $account->id }}">{{ $account->name }} - {{ $account->balance }} {{ $account->currency->code }}</option>
                 @endforeach
             </x-select-field>
         </x-input.section>
