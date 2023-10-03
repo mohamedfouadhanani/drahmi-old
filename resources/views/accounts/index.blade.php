@@ -2,10 +2,14 @@
 
 @section('title', "Accounts")
 
+@php
+    $link = route("accounts.create")
+@endphp
+
 @section('content')
     <x-container>
         <x-flash-message name="success" />
-        
+        <x-page-header name="accounts" link="{{ $link }}" icon="fa-solid fa-plus"/>
         @foreach ($accounts as $account)
             <section>
                 <section>

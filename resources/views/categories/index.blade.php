@@ -2,10 +2,14 @@
 
 @section('title', "categories")
 
+@php
+    $link = route("categories.create")
+@endphp
+
 @section('content')
 <x-container>
     <x-flash-message name="success" />
-
+    <x-page-header name="categories" link="{{ $link }}" icon="fa-solid fa-plus"/>
     @foreach ($categories as $category)
     <section>
         <section>
