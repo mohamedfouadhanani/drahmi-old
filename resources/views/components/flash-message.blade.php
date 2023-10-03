@@ -12,12 +12,12 @@
 @endphp
 
 @if (session()->has($name))
-    <section @class($dynamic_classes)>
+    <section @class($dynamic_classes) id="flash-message">
         <section>
             {{ session($name) }}
         </section>
         <section>
-            <button><i class="fa-solid fa-xmark"></i></button>
+            <button id="flash-message-btn"><i class="fa-solid fa-xmark"></i></button>
         </section>
     </section>
 @endif
