@@ -15,6 +15,7 @@
     <script src="https://kit.fontawesome.com/8b339e535a.js" crossorigin="anonymous"></script>
 
     @vite('resources/js/navbar.js')
+    @vite('resources/js/flash-message.js')
 
     @vite('resources/css/app.css')
 
