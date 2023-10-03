@@ -1,3 +1,5 @@
+const colors = require("tailwindcss/colors");
+
 /** @type {import('tailwindcss').Config} */
 export default {
     darkMode: "class",
@@ -7,7 +9,13 @@ export default {
         "./resources/**/*.vue",
     ],
     theme: {
-        extend: {},
+        extend: {
+            colors: {
+                error: colors.red["600"],
+                success: colors.green["600"],
+                primary: colors.neutral,
+            },
+        },
     },
     plugins: [require("@tailwindcss/forms"), require("tailwind-scrollbar")],
 };
