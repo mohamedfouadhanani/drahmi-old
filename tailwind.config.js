@@ -9,6 +9,9 @@ export default {
         "./resources/**/*.vue",
     ],
     theme: {
+        fontFamily: {
+            dancing: "Dancing Script",
+        },
         extend: {
             colors: {
                 error: colors.red["600"],

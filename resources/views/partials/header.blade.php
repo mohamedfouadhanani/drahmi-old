@@ -12,8 +12,9 @@
 
 <header class="bg-neutral-900 text-white">
     <x-container class="flex justify-between items-center">
-        <section>
-            <h1>drahmi</h1>
+        <section class="flex items-center space-x-2 select-none">
+            <i class="fa-solid fa-money-bills text-xl"></i>
+            <h1 class="font-bold text-xl capitalize font-dancing">drahmi</h1>
         </section>
         <nav class="hidden sm:flex space-x-2">
             @auth
