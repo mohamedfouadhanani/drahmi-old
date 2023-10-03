@@ -3,6 +3,7 @@
 @section('title', $account->name)
 
 @section('content')
+<x-container>
     <section>
         <section>
             id: {{ $account->id }}
@@ -26,4 +27,5 @@
             updated_at: {{ $account->updated_at }}
         </section>
     </section>
+</x-container>
 @endsection

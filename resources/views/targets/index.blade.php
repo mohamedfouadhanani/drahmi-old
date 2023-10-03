@@ -3,6 +3,9 @@
 @section('title', "targets")
 
 @section('content')
+<x-container>
+    <x-flash-message name="success" />
+    
     @foreach ($accounts as $account)
         @foreach ($account->targets as $target)
         <section>
@@ -36,4 +39,5 @@
         </section>
         @endforeach
     @endforeach
+</x-container>
 @endsection

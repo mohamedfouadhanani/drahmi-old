@@ -3,24 +3,26 @@
 @section('title', "income")
 
 @section('content')
-<section>
+<x-container>
     <section>
-        id: {{ $income->id }}
+        <section>
+            id: {{ $income->id }}
+        </section>
+        <section>
+            date: {{ $income->transaction->date }}
+        </section>
+        <section>
+            description: {{ $income->transaction->description }}
+        </section>
+        <section>
+            amount: {{ $income->amount }}
+        </section>
+        <section>
+            category: {{ $income->category->name }}
+        </section>
+        <section>
+            account: {{ $income->account->name }}
+        </section>
     </section>
-    <section>
-        date: {{ $income->transaction->date }}
-    </section>
-    <section>
-        description: {{ $income->transaction->description }}
-    </section>
-    <section>
-        amount: {{ $income->amount }}
-    </section>
-    <section>
-        category: {{ $income->category->name }}
-    </section>
-    <section>
-        account: {{ $income->account->name }}
-    </section>
-</section>
+</x-container>
 @endsection

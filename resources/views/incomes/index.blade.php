@@ -3,6 +3,9 @@
 @section('title', "incomes")
 
 @section('content')
+<x-container>
+    <x-flash-message name="success" />
+    
     @foreach ($accounts as $account)
         @foreach ($account->incomes as $income)
         <section>
@@ -36,4 +39,5 @@
         </section>
         @endforeach
     @endforeach
+</x-container>
 @endsection

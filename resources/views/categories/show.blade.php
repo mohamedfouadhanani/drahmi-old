@@ -3,21 +3,23 @@
 @section('title', $category->name)
 
 @section('content')
-<section>
+<x-container>
     <section>
-        id: {{ $category->id }}
+        <section>
+            id: {{ $category->id }}
+        </section>
+        <section>
+            name: {{ $category->name }}
+        </section>
+        <section>
+            description: {{ $category->description }}
+        </section>
+        <section>
+            created_at: {{ $category->created_at }}
+        </section>
+        <section>
+            updated_at: {{ $category->updated_at }}
+        </section>
     </section>
-    <section>
-        name: {{ $category->name }}
-    </section>
-    <section>
-        description: {{ $category->description }}
-    </section>
-    <section>
-        created_at: {{ $category->created_at }}
-    </section>
-    <section>
-        updated_at: {{ $category->updated_at }}
-    </section>
-</section>
+</x-container>
 @endsection

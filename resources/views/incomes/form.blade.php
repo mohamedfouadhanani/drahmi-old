@@ -2,38 +2,49 @@
 
 @section('title', $income->exists ? "Update Income" : "Create Income")
 
+@php
+    $date = old("date", $income->transaction == null ? "" : \Carbon\Carbon::parse($income->transaction->date)->format('Y-m-d'));
+    $description = old("description", $income->transaction == null ? "" : $income->transaction->description);
+    $amount = old("amount", $income->amount);
+
+    $route = route($income->exists ? "incomes.update" : "incomes.store", $income);
+    $back_link = route("incomes.index");
+    $button_text = $income->exists ? "Update" : "Create";
+@endphp
+
 @section('content')
-    <form action="{{ route($income->exists ? "incomes.update" : "incomes.store", $income) }}" method="post">
+<x-container>
+    <x-form.form action="{{ $route }}" method="post">
         @csrf
         @method($income->exists ? "PUT" : "POST")
 
         {{-- date --}}
-        <x-input-field name="date" label="date">
-            <input type="date" id="date" placeholder="Enter the incomes date" value="{{ old("date", $income->transaction == null ? "" : \Carbon\Carbon::parse($income->transaction->date)->format('Y-m-d')) }}" name="date">
-        </x-input-field>
+        <x-input.section name="date" label="date">
+            <x-input.field type="date" name="date" placeholder="Enter the incomes date" :value="$date" :errors="$errors" />
+        </x-input.section>
 
         {{-- description --}}
-        <x-input-field name="description" label="description">
-            <textarea name="description" id="description" placeholder="Enter the incomes description">{{ old("description", $income->transaction == null ? "" : $income->transaction->description) }}</textarea>
-        </x-input-field>
+        <x-input.section name="description" label="description">
+            <x-textarea-field name="description" placeholder="Enter the incomes description" :value="$description" :errors="$errors" />
+        </x-input.section>
 
         {{-- amount --}}
-        <x-input-field name="amount" label="amount">
-            <input type="number" id="amount" placeholder="Enter the incomes amount" value="{{ old("amount", $income->amount) }}" name="amount">
-        </x-input-field>
+        <x-input.section name="amount" label="amount">
+            <x-input.field type="number" name="amount" placeholder="Enter the incomes amount" :value="$amount" :errors="$errors" />
+        </x-input.section>
 
         {{-- account --}}
-        <x-input-field name="account_id" label="account">
-            <select name="account_id" id="account_id">
+        <x-input.section name="account_id" label="account">
+            <x-select-field name="account_id">
                 @foreach ($accounts as $account)
                     <option {{ $income->account_id === $account->id ? "selected" : "" }} value="{{ $account->id }}">{{ $account->name }}</option>
                 @endforeach
-            </select>
-        </x-input-field>
+            </x-select-field>
+        </x-input.section>
 
         {{-- category --}}
-        <x-input-field name="category_id" label="category">
-            <select name="category_id" id="category_id">
+        <x-input.section name="category_id" label="category">
+            <x-select-field name="category_id">
                 <optgroup label="System Categories">
                     @foreach ($system_categories as $system_category)
                         <option {{ $income->category_id === $system_category->id ? "selected" : "" }} value="{{ $system_category->id }}">{{ $system_category->name }}</option>
@@ -47,9 +58,10 @@
                     @endforeach
                 </optgroup>
                 @endif
-            </select>
-        </x-input-field>
+            </x-select-field>
+        </x-input.section>
 
-        <input type="submit" value="{{ $income->exists ? "Update" : "Create" }}" />
-    </form>
+        <x-form.action-section back_link="{{ $back_link }}" text="{{ $button_text }}" />
+    </x-form.form>
+</x-container>
 @endsection

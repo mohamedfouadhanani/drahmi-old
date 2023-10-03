@@ -3,6 +3,9 @@
 @section('title', "categories")
 
 @section('content')
+<x-container>
+    <x-flash-message name="success" />
+
     @foreach ($categories as $category)
     <section>
         <section>
@@ -25,4 +28,5 @@
         </section>
     </section>
     @endforeach
+</x-container>
 @endsection
