@@ -3,45 +3,33 @@
 @section('title', "targets")
 
 @php
-    $link = route("targets.create")
+    $link = route("targets.create");
+
+    $column_names = ["name", "description", "account", "amount", "condition"];
 @endphp
 
 @section('content')
-<x-container>
+<x-container class="space-y-4">
     <x-flash-message name="success" />
     <x-page-header name="targets" link="{{ $link }}" icon="fa-solid fa-plus"/>
+    <x-table.table :column_names="$column_names">
     @foreach ($accounts as $account)
         @foreach ($account->targets as $target)
-        <section>
-            <section>
-                id: {{ $target->id }}
-            </section>
-            <section>
-                name: {{ $target->name }}
-            </section>
-            <section>
-                description: {{ $target->description }}
-            </section>
-            <section>
-                amount: {{ $target->amount }} {{ $target->account->currency->code }}
-            </section>
-            <section>
-                account: {{ $target->account->name }}
-            </section>
-            <section>
-                condition: {{ $target->condition }}
-            </section>
-            <section>
-                <a href="{{ route("targets.show", $target) }}">show</a>
-                <a href="{{ route("targets.edit", $target) }}">edit</a>
-                <form action="{{ route("targets.destroy", $target) }}" method="post">
-                    @csrf
-                    @method("DELETE")
-                    <input type="submit" value="delete">
-                </form>
-            </section>
-        </section>
+        @php
+            $show_route = route("targets.show", $target);
+            $edit_route = route("targets.edit", $target);
+            $delete_route = route("targets.destroy", $target);
+        @endphp
+        <tr>
+            <x-table.data>{{ $target->name }}</x-table.data>
+            <x-table.data>{{ $target->description }}</x-table.data>
+            <x-table.data>{{ $target->account->name }}</x-table.data>
+            <x-table.data>{{ $target->amount }} {{ $target->account->currency->code }}</x-table.data>
+            <x-table.data>{{ $target->condition }}</x-table.data>
+            <x-table.action :show_route="$show_route" :edit_route="$edit_route" :delete_route="$delete_route" />
+        </tr>
         @endforeach
     @endforeach
+    </x-table.table>
 </x-container>
 @endsection
