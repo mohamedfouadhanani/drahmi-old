@@ -7,6 +7,8 @@ use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\IncomeController;
 use App\Http\Controllers\TransferController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Requests\ProfilePictureFormRequest;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,4 +36,13 @@ Route::resource("transfers", TransferController::class)->middleware(["auth", "ve
 
 Route::prefix("users")->middleware(["auth", "verified"])->name("users.")->group(function () {
     Route::get("profile", ProfileController::class, "edit")->name("profile");
+    Route::put("profile_picture_update", function (ProfilePictureFormRequest $request) {
+        $path = $request->file("profile_picture")->store("profile_pictures");
+        
+        $user = User::where("id", request()->user()->id)->first();
+        $user->profile_picture = $path;
+        $user->save();
+
+        return to_route("users.profile");
+    })->name("profile_picture_update");
 });

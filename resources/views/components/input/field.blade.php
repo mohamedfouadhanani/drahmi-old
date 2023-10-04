@@ -1,4 +1,4 @@
-@props(["name", "type", "placeholder", "value" => "", "errors", "autocomplete" => "off"])
+@props(["name", "type", "placeholder" => "", "value" => "", "errors", "autocomplete" => "off"])
 
 @php
     $has_error = $errors->has($name);
