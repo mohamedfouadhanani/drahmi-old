@@ -9,7 +9,9 @@
     $login_route = route("login");
     $register_route = route("register");
     
-    $profile_picture_path = "storage/" . auth()->user()->profile_picture;
+    if (auth()->user()) {
+        $profile_picture_path = "storage/" . auth()->user()->profile_picture;
+    }
 @endphp
 
 <header class="bg-neutral-900 text-white">
@@ -45,6 +47,7 @@
             @endguest
         </nav>
         <section class="sm:hidden flex items-center justify-between space-x-2">
+            @auth
             <x-navbar.link href="{{ $profile_route }}">
                 <img src="{{ asset($profile_picture_path) }}" alt="profile picture" class="h-6 w-6 rounded-full">
             </x-navbar.link>
@@ -54,6 +57,7 @@
                     <i class="fa-solid fa-right-from-bracket"></i>
                 </button>
             </form>
+            @endauth
             <button class="px-3 py-2 rounded bg-transparent hover:bg-neutral-800" id="menu-btn">
                 <i id="bars-icon" class="fa-solid fa-bars"></i>
                 <i id="xmark-icon" class="hidden fa-solid fa-xmark"></i>
