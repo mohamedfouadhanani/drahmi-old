@@ -2,22 +2,36 @@
 
 @section("title", "Login")
 
+@php
+    $email = old("email");
+    $password = old("password");
+
+    $route = route("login");
+
+    $forgot_password_route = route("password.request");
+    $register_route = route("register");
+@endphp
+
 @section('content')
-    <form action="{{ route("login") }}" method="post">
-        @csrf
-        <x-input-field name="email" label="email">
-            <input type="email" id="email" placeholder="Enter your email" value="{{ old("email") }}" name="email">
-        </x-input-field>
+    <x-container>
+        <x-form.form action="{{ $route }}" method="post" class="mb-4">
+            @csrf
+            <x-input.section name="email" label="email">
+                <x-input.field autocomplete="on" type="email" name="email" placeholder="Enter your email" :value="$email" :errors="$errors" />
+            </x-input.section>
 
-        <x-input-field name="password" label="password">
-            <input type="password" id="password" placeholder="Enter your password" name="password">
-        </x-input-field>
+            <x-input.section name="password" label="password">
+                <x-input.field type="password" name="password" placeholder="Enter your password" :value="$password" :errors="$errors" />
+            </x-input.section>
 
-        <input type="submit" value="login" />
-    </form>
+            <section class="flex justify-between items-center capitalize">
+                <x-button type="primary">login</x-button>
+                <x-link href="{{ $forgot_password_route }}" class="text-blue-600 hover:text-blue-500">forgot password?</x-link>
+            </section>
+        </x-form.form>
 
-    <span>forgot your password? <a href="{{route("password.request")}}">reset password</a></span>
-
-    <span>don't have an account? <a href="{{route("register")}}">register</a></span>
-    
+        <section class="flex justify-center capitalize">
+            <span>don't have an account? <x-link href="{{ $register_route }}" class="text-blue-600 hover:text-blue-500">register</x-link></span>
+        </section>
+    </x-container>
 @endsection

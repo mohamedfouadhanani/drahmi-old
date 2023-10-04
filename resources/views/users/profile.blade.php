@@ -2,19 +2,30 @@
 
 @section("title", "Profile")
 
+@php
+    $name = auth()->user()->name;
+    $email = auth()->user()->email;
+
+    $route = route("user-profile-information.update");
+    $back_link = route("accounts.index");
+    $button_text = "Update";
+@endphp
+
 @section('content')
+<x-container>
     <x-flash-message name="status" />
-    <form action="{{ route("user-profile-information.update") }}" method="post">
+    <x-form.form action="{{ $route }}" method="post">
         @csrf
         @method("PUT")
-        <x-input-field name="name" label="name">
-            <input type="text" id="name" placeholder="Enter your name" value="{{ auth()->user()->name }}" name="name">
-        </x-input-field>
+        <x-input.section name="name" label="name">
+            <x-input.field type="text" name="name" placeholder="Enter your name" :value="$name" :errors="$errors" />
+        </x-input.section>
 
-        <x-input-field name="email" label="email">
-            <input type="email" id="email" placeholder="Enter your email" value="{{ auth()->user()->email }}" name="email">
-        </x-input-field>
+        <x-input.section name="email" label="email">
+            <x-input.field type="email" name="email" placeholder="Enter your email" :value="$email" :errors="$errors" />
+        </x-input.section>
 
-        <input type="submit" value="update" />
-    </form>    
+        <x-form.action-section back_link="{{ $back_link }}" text="{{ $button_text }}" />
+    </x-form.form>
+</x-container>
 @endsection
