@@ -5,7 +5,7 @@
 @php
     $link = route("targets.create");
 
-    $column_names = ["name", "description", "account", "amount", "condition"];
+    $column_names = ["name", "description", "account", "amount", "condition", "is reached"];
 @endphp
 
 @section('content')
@@ -26,6 +26,13 @@
             <x-table.data>{{ $target->account->name }}</x-table.data>
             <x-table.data>{{ $target->amount }} {{ $target->account->currency->code }}</x-table.data>
             <x-table.data>{{ $target->condition }}</x-table.data>
+            <x-table.data>
+                @if ($target->is_reached)
+                    <x-chip type="success">yes</x-chip>
+                @else
+                    <x-chip type="error">no</x-chip>
+                @endif
+            </x-table.data>
             <x-table.action :show_route="$show_route" :edit_route="$edit_route" :delete_route="$delete_route" />
         </tr>
         @endforeach
