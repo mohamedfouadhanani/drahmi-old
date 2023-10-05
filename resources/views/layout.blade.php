@@ -16,6 +16,7 @@
 
     @vite('resources/js/navbar.js')
     @vite('resources/js/flash-message.js')
+    @vite('resources/js/profile-dropdown.js')
 
     @vite('resources/css/app.css')
 
