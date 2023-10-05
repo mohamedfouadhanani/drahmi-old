@@ -5,11 +5,11 @@ const xmarkIcon = document.getElementById("xmark-icon");
 
 const smallScreenNavbar = document.getElementById("small-screen-navbar");
 
-let isClosed = true;
+let navBarIsClosed = true;
 
 menuBTN.addEventListener("click", () => {
-    isClosed = !isClosed;
-    if (isClosed) {
+    navBarIsClosed = !navBarIsClosed;
+    if (navBarIsClosed) {
         // HIDE SMALL SCREEN NAVBAR
         smallScreenNavbar.classList.add("hidden");
         smallScreenNavbar.classList.remove("flex");
@@ -30,4 +30,5 @@ menuBTN.addEventListener("click", () => {
         // SHOW THE XMARK ICON
         xmarkIcon.classList.remove("hidden");
     }
+    menuBTN.blur();
 });
