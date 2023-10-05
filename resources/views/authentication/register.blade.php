@@ -21,7 +21,7 @@
             </x-input.section>
 
             <x-input.section name="email" label="email">
-                <x-input.field type="email" name="email" placeholder="Enter your email" :value="$email" :errors="$errors" />
+                <x-input.field autocomplete="on" type="email" name="email" placeholder="Enter your email" :value="$email" :errors="$errors" />
             </x-input.section>
 
             <x-input.section name="password" label="password">
