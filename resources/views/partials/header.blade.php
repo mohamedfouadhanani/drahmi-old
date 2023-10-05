@@ -36,7 +36,9 @@
                 <x-navbar.link href="{{ $register_route }}">register</x-navbar.link>
                 @endguest
             </nav>
-            @include('partials.profile-dropdown.dropdown')
+            @auth
+                @include('partials.profile-dropdown.dropdown')
+            @endauth
             <section class="sm:hidden flex items-center justify-between space-x-2">
                 @auth
                 @endauth
