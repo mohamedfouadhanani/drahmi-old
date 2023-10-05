@@ -22,7 +22,7 @@ class AccountFormRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "name" => ["required", "min:4", "unique:accounts"],
+            "name" => ["required", "min:4"],
             "description" => ["nullable"],
             "initial_balance" => ["required", "min:0"],
             "currency_id" => ["required", "exists:currencies,id"]
