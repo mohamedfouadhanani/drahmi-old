@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('accounts', function (Blueprint $table) {
             $table->id();
-            $table->string("name")->unique();
+            $table->string("name");
             $table->longText("description")->nullable();
             $table->float("initial_balance", 11, 2);
             $table->unsignedBigInteger('user_id');
