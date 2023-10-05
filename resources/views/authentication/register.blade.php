@@ -34,7 +34,7 @@
 
             <section class="flex justify-between items-center capitalize">
                 <x-button type="primary">register</x-button>
-                <span>already have an account? <x-link href="{{ $login_route }}" class="text-blue-600 hover:text-blue-500">login</x-link></span>
+                <span>already have an account? <x-link href="{{ $login_route }}" type="http">login</x-link></span>
             </section>
         </x-form.form>
     </x-container>
