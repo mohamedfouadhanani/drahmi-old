@@ -11,7 +11,15 @@ class TransferFormRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return true;
+        $authorize = true;
+
+        $request_method = $this->request->get("_method");
+        if ($request_method == "PUT") {
+            $authorize = $this->route("from_account")->account->user_id == $this->user()->id;
+            $authorize = $authorize && $this->route("to_account")->account->user_id == $this->user()->id;
+        }
+
+        return $authorize;
     }
 
     /**
