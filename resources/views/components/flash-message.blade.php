@@ -6,8 +6,8 @@
 
     $dynamic_classes = [
         "ring-2 p-4 rounded capitalize font-semibold flex justify-between items-center", 
-        "ring-success text-success bg-green-100" => $is_success,
-        "ring-error text-error bg-red-100" => $is_failure,
+        "ring-success text-success bg-green-100 dark:bg-green-900" => $is_success,
+        "ring-error text-error bg-red-100 dark:bg-red-900" => $is_failure,
     ];
 @endphp
 

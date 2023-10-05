@@ -14,7 +14,7 @@
     }
 @endphp
 
-<header class="bg-neutral-900 text-white">
+<header class="bg-neutral-900 text-white dark:bg-gray-900">
     <x-container class="flex justify-between items-center">
         <section class="flex items-center space-x-2 select-none">
             <i class="fa-solid fa-money-bills text-xl"></i>

@@ -6,6 +6,6 @@
     <form action="{{ $delete_route }}" method="post">
         @csrf
         @method("DELETE")
-        <input type="submit" value="delete" class="cursor-pointer capitalize text-sm text-primary-600 font-semibold hover:text-primary-500 hover:underline">
+        <input type="submit" value="delete" class="cursor-pointer capitalize text-sm text-primary-600 dark:text-gray-400 font-semibold hover:text-primary-500 dark:hover:text-gray-500 hover:underline">
     </form>
 </x-table.data>
