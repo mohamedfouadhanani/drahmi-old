@@ -50,4 +50,6 @@ Drahmi's transaction management functionality offers users a comprehensive tools
 -   [x] Remove the `welcome.blade.php` template.
 -   [x] Implement the `HOME` route.
 -   [ ] Fix the bug when updating a resource ignore all unique columns.
+-   [x] Fix the bug when viewing a resource it has to be owner.
+-   [ ] Fix balance computing method.
 -   [ ] Implement the user interface.
