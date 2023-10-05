@@ -4,9 +4,9 @@
     $has_icon = $icon != "";
 
     $classes = [
-        "primary" => "bg-primary-800 hover:bg-primary-700",
-        "edit" => "bg-blue-800 hover:bg-blue-700",
-        "remove" => "bg-error-800 hover:bg-error-700",
+        "primary" => "bg-primary-800 hover:bg-primary-700 dark:bg-gray-800 dark:hover:bg-gray-700",
+        "edit" => "bg-blue-800 hover:bg-blue-700 dark:bg-blue-800 dark:hover:bg-blue-700",
+        "remove" => "bg-error-800 hover:bg-error-700 dark:bg-error-800 dark:hover:bg-error-700",
     ];
 @endphp
 
