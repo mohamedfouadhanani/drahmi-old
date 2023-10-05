@@ -26,12 +26,12 @@
 
             <section class="flex justify-between items-center capitalize">
                 <x-button type="primary">login</x-button>
-                <x-link href="{{ $forgot_password_route }}" class="text-blue-600 hover:text-blue-500">forgot password?</x-link>
+                <x-link href="{{ $forgot_password_route }}" type="http">forgot password?</x-link>
             </section>
         </x-form.form>
 
         <section class="flex justify-center capitalize">
-            <span>don't have an account? <x-link href="{{ $register_route }}" class="text-blue-600 hover:text-blue-500">register</x-link></span>
+            <span>don't have an account? <x-link href="{{ $register_route }}" type="http">register</x-link></span>
         </section>
     </x-container>
 @endsection

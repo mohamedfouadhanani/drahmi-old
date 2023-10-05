@@ -1,5 +1,12 @@
-@props(["href", "class" => ""])
+@props(["href", "type" => "primary"])
 
-<a href="{{ $href }}" class="capitalize text-sm text-primary-600 font-semibold hover:text-primary-500 hover:underline {{ $class }}">
+@php
+    $classes = [
+        "primary" => "primary",
+        "http" => "blue"
+    ];
+@endphp
+
+<a href="{{ $href }}" class="capitalize text-sm text-{{$classes[$type]}}-600 font-semibold hover:text-{{$classes[$type]}}-500 hover:underline">
     {{ $slot }}
 </a>
