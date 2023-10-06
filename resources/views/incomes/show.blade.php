@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', "income")
+@section('title', "Income")
 
 @php
     $back_route = route("incomes.index");

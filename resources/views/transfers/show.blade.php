@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', "transfer")
+@section('title', "Transfer")
 
 @php
     $back_route = route("transfers.index");
