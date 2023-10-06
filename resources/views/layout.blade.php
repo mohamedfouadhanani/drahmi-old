@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="dark">
+<html >
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,13 +17,14 @@
     @vite('resources/js/navbar.js')
     @vite('resources/js/flash-message.js')
     @vite('resources/js/profile-dropdown.js')
+    @vite('resources/js/theme.js')
 
     @vite('resources/css/app.css')
 
     <title>drahmi | @yield('title')</title>
 </head>
 <body class="space-y-4 dark:bg-gray-900 dark:text-white">
-    @include('partials.header')
+    @include('partials.header.header')
     @yield('content')
 </body>
 </html>
