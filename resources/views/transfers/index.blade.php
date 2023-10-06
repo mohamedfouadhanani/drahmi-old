@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', "transfers")
+@section('title', "Transfers")
 
 @php
     $link = route("transfers.create");
