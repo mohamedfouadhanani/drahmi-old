@@ -4,7 +4,6 @@ const profileDropdownList = document.getElementById("profile-dropdown-list");
 let profileDropdownIsClosed = true;
 
 profileDropdownBtn.addEventListener("click", () => {
-    console.log("clicked...");
     profileDropdownIsClosed = !profileDropdownIsClosed;
     if (profileDropdownIsClosed) {
         // HIDE DROPDOWN LIST
