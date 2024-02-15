@@ -8,6 +8,7 @@
   - [Transactions management](#transactions-management)
 - [Technologies](#technologies)
 - [Implementation details](#implementation-details)
+- [Screenshots](#screenshots)
 
 ## Description
 
@@ -51,3 +52,24 @@ Drahmi's transaction management functionality offers users a comprehensive tools
 -   [x] Implement the `HOME` route.
 -   [ ] Fix the bug when updating a resource ignore all unique columns.
 -   [ ] Implement the user interface.
+
+## Screenshots
+
+**Login UI**
+
+![Login UI](README/login.png)
+![Login UI Dark Mode](README/login%20dm.png)
+
+**Email Verification**
+
+![Email Verification UI](README/email%20verification.png)
+
+**Profile Preview** UI
+
+![Profile Preview](README/profile.png)
+![Profile Preview](README/profile%20dm.png)
+
+**Accounts UI**
+
+![Accounts UI](README/accounts.png)
+![Accounts UI](README/accounts%20dm.png)
