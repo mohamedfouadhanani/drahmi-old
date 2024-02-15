@@ -11,7 +11,14 @@ class CategoryFormRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return true;
+        $authorize = true;
+
+        $request_method = $this->request->get("_method");
+        if ($request_method == "PUT") {
+            $authorize = $this->route("category")->user_id == $this->user()->id;
+        }
+
+        return $authorize;
     }
 
     /**

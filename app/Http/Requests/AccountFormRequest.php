@@ -11,7 +11,14 @@ class AccountFormRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return true;
+        $authorize = true;
+
+        $request_method = $this->request->get("_method");
+        if ($request_method == "PUT") {
+            $authorize = $this->route("account")->user_id == $this->user()->id;
+        }
+
+        return $authorize;
     }
 
     /**
@@ -22,7 +29,7 @@ class AccountFormRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "name" => ["required", "min:4", "unique:accounts"],
+            "name" => ["required", "min:4"],
             "description" => ["nullable"],
             "initial_balance" => ["required", "min:0"],
             "currency_id" => ["required", "exists:currencies,id"]

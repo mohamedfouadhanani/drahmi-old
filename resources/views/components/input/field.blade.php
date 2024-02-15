@@ -5,7 +5,7 @@
 @endphp
 
 <input 
-    @class(["rounded", "border-error" => $has_error, "border-primary-300" => !$has_error])
+    @class(["rounded dark:bg-gray-800", "border-error" => $has_error, "border-primary-300 dark:border-gray-700" => !$has_error])
     id="{{ $name }}" 
     type="{{ $type }}" 
     name="{{ $name }}" 
